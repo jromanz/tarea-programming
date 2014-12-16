@@ -311,6 +311,8 @@ public class MenuVentas extends JFrame {
 			@Override
 			public void windowClosing(WindowEvent e) {
 				e.getWindow().dispose();
+                                vendedoresCombo.clear();
+                                llenarCombo();
 			}
 		});
 
@@ -472,6 +474,7 @@ public class MenuVentas extends JFrame {
 				if (evt.getStateChange() == ItemEvent.SELECTED) {
 					dniVendedor = valor;
 				}
+                                System.out.println(dniVendedor);
 			}
 		});
 	}
@@ -490,6 +493,7 @@ public class MenuVentas extends JFrame {
 	}
 
 	private void llenarCombo() {
+                cmbVendedor.removeAllItems();
 		VendedorServiceImpl vendedoresService = new VendedorServiceImpl();
 		vendedoresCombo = vendedoresService.getVendedoresComboBox();
 		for (Map.Entry<String, String> vendedor : vendedoresCombo.entrySet()) {
@@ -565,7 +569,10 @@ public class MenuVentas extends JFrame {
 		txtDni.setText("");
 		txtFecha.setText("");
 		txtDireccion.setText("");
-		detalleVentas.removeAll(detalleVentas);
+                txtIGV.setText("");
+                txtSubTotal.setText("");
+                txtTotalAPagar.setText("");
+		detalleVentas.clear();
 		model = new DetalleVentasTableModel(detalleVentas);
 		tblDetalleVentas.setModel(model);
 		tblDetalleVentas.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);

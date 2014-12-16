@@ -21,14 +21,14 @@ public class DetalleVentasTest {
 		double prec_unit = 40.7;
 		double prec_vent = cantidad * prec_unit;
 		String cod_prod = "PR1002";
-		int id_ventas = 1;
+		int id_ventas = 35;
 		DetalleVentas detalleVentas1 = new DetalleVentas(nom_prod, cantidad, prec_unit, prec_vent, cod_prod, id_ventas);
 		nom_prod = "Monitor LCD 19 pp";
 		cantidad = 3;
 		prec_unit = 220.5;
 		prec_vent = cantidad * prec_unit;
 		cod_prod = "PR1001";
-		id_ventas = 1;
+		id_ventas = 35;
 		DetalleVentas detalleVentas2 = new DetalleVentas(nom_prod, cantidad, prec_unit, prec_vent, cod_prod, id_ventas);
 		
 		DetalleVentasServiceImpl detalleService = new DetalleVentasServiceImpl();
